@@ -1,0 +1,216 @@
+/* ------------------------------
+   Comportamiento de scroll
+------------------------------ */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ------------------------------
+   Estilos generales
+------------------------------ */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: linear-gradient(90deg,
+    rgba(135, 120, 235, 1) 0%,
+    rgba(110, 240, 169, 1) 49%,
+    rgba(255, 231, 77, 1) 100%);
+  min-height: 100vh;
+}
+
+/* ------------------------------
+   Sidebar lateral (Desktop)
+------------------------------ */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 70px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  transition: width 0.3s;
+}
+
+.sidebar:hover {
+  width: 240px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.sidebar:hover a {
+  opacity: 1;
+}
+
+.sidebar a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+}
+
+/* ------------------------------
+   Contenido principal
+------------------------------ */
+.main-content {
+  padding: 20px;
+  margin-left: 70px;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* ------------------------------
+   Jumbotron principal
+------------------------------ */
+.pt-5 {
+  padding-top: 3rem;
+}
+
+/* ------------------------------
+   Círculos de Ejes ESI
+------------------------------ */
+.ejes-circulos {
+  display: flex;
+  flex-wrap: nowrap;  /* sin salto de línea */
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  overflow-x: auto; /* para scroll horizontal si no entran */
+  -webkit-overflow-scrolling: touch; /* suaviza scroll en móvil */
+}
+
+.eje {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(3px);
+}
+
+/* Colores base para cada eje */
+.eje-1 { background-color: #fcf26a; }
+.eje-2 { background-color: #b0f086; }
+.eje-3 { background-color: #62fcb4; }
+.eje-4 { background-color: #7ffaf0; }
+.eje-5 { background-color: #c2cbf5; }
+
+/* Círculo activo (al clickear) */
+.eje.activo {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 200px;
+  height: 200px;
+  font-size: 0.9rem;
+  border-color: rgb(255, 153, 0);
+}
+
+/* Tooltip / Info extra del eje */
+.info-eje {
+  display: none;
+  position: absolute;
+  top: 100%;
+  margin-top: 1rem;
+  padding: 0.8rem;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.eje:focus .info-eje,
+.eje:active .info-eje {
+  display: block;
+}
+
+/* ------------------------------
+Form contacto
+------------------------------ */
+
+.contact-form-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  margin: 2rem auto;
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
+  background-color: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: white;
+}
+
+.contact-form-container input::placeholder,
+.contact-form-container textarea::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+.contact-form-container .form-control:focus {
+  border-color: #ffd27f;
+  box-shadow: 0 0 5px #ffd27f;
+  background-color: rgba(255,255,255,0.15);
+}
+
+.offcanvas-body {
+  padding-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.offcanvas {
+  max-width: 250px;
+}
+
+@media (min-width: 1920px) {
+  .main-content {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .ejes-btns {
+    display: none;
+  }
+  .main-content {
+    margin-left: 0 !important;
+    max-width: 100%;
+    padding: 1rem;
+  }
+}
