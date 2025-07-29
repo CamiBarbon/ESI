@@ -8,6 +8,35 @@
   <link rel="stylesheet" href="../css/estilos.css" />
 </head>
 <body>
+    <!-- Menú hamburguesa mobile -->
+  <nav class="navbar navbar-dark d-md-none" style="background-color: rgba(0, 0, 0, 0.6);">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <span class="navbar-brand">ESI en la Escuela Media</span>
+    </div>
+  </nav>
+
+  <!-- Menú lateral mobile -->
+  <div class="offcanvas offcanvas-start text-white" id="mobileMenu" tabindex="-1" style="background-color: rgba(0, 0, 0, 0.85);">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Menú</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="nav flex-column">
+  <li><a href="../index.html">Inicio</a></li>
+  <li><a href="../marco-legal.html">Conocé la Ley</a></li>
+  <li><a href="../principios.html">Enfoques</a></li>
+  <li><a href="../ejes/index.html">Ejes ESI</a></li>
+  <li><a href="../aula/index.html">Para el aula</a></li>
+  <li><a href="../participemos/index.html">Participemos</a></li>
+  <li><a href="../recursos/index.html">Recursos</a></li>
+  <li><a href="../contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
 <nav id="sidebarMenu" class="sidebar d-none d-md-block">
   <ul class="nav flex-column">
   <li><a href="../index.html">Inicio</a></li>
@@ -21,10 +50,35 @@
   </ul>
 </nav>
 <main class="main-content">
-  <section class="pt-5">
-    <h1>Participemos</h1>
-    <p>Contenido de la sección participemos...</p>
-  </section>
-</main>
+    <section class="participemos-container">
+      <h1>Participemos: iniciativas y espacios para fortalecer la ESI</h1>
+      <div class="participemos-grid">
+        <article class="participemos-card">
+          <h3>Festival X Más ESI</h3>
+          <p>Un evento cultural que promueve la educación sexual integral a través de actividades artísticas y sociales.</p>
+          <a href="https://www.instagram.com/festivalxmasesi" target="_blank" rel="noopener noreferrer">Instagram @festivalxmasesi</a>
+          <a href="https://www.facebook.com/festivalxmasesi" target="_blank" rel="noopener noreferrer">Facebook /festivalxmasesi</a>
+        </article>
+
+        <article class="participemos-card">
+          <h3>Programa KALEIDOS</h3>
+          <p>Iniciativa que impulsa la educación integral y la diversidad desde una perspectiva innovadora y colectiva.</p>
+          <a href="https://www.programakaleidos.org" target="_blank" rel="noopener noreferrer">Sitio oficial</a>
+          <a href="https://twitter.com/programakaleidos" target="_blank" rel="noopener noreferrer">Twitter @programakaleidos</a>
+        </article>
+
+        <article class="participemos-card">
+          <h3>Fundación Huésped / ESI</h3>
+          <p>Organización dedicada a la promoción de la salud sexual y la prevención, con programas enfocados en la ESI.</p>
+          <a href="https://www.fundacionhuesped.org.ar" target="_blank" rel="noopener noreferrer">Fundación Huésped</a>
+          <a href="https://www.instagram.com/fundhuesped" target="_blank" rel="noopener noreferrer">Instagram @fundhuesped</a>
+        </article>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<footer class="footer bg-light p-3 mt-5 text-center">
+  <p class="text-muted small mb-0">© 2025 | Desarrollo: Cátedra Drelichman - UNA</p>
+</footer>
 </html>

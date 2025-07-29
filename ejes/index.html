@@ -8,6 +8,35 @@
   <link rel="stylesheet" href="../css/estilos.css" />
 </head>
 <body>
+      <!-- Menú hamburguesa mobile -->
+  <nav class="navbar navbar-dark d-md-none" style="background-color: rgba(0, 0, 0, 0.6);">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <span class="navbar-brand">ESI en la Escuela Media</span>
+    </div>
+  </nav>
+
+  <!-- Menú lateral mobile -->
+  <div class="offcanvas offcanvas-start text-white" id="mobileMenu" tabindex="-1" style="background-color: rgba(0, 0, 0, 0.85);">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Menú</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="nav flex-column">
+  <li><a href="../index.html">Inicio</a></li>
+  <li><a href="../marco-legal.html">Conocé la Ley</a></li>
+  <li><a href="../principios.html">Enfoques</a></li>
+  <li><a href="../ejes/index.html">Ejes ESI</a></li>
+  <li><a href="../aula/index.html">Para el aula</a></li>
+  <li><a href="../participemos/index.html">Participemos</a></li>
+  <li><a href="../recursos/index.html">Recursos</a></li>
+  <li><a href="../contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
 <nav id="sidebarMenu" class="sidebar d-none d-md-block">
   <ul class="nav flex-column">
   <li><a href="../index.html">Inicio</a></li>
@@ -20,11 +49,70 @@
   <li><a href="../contacto.html">Contacto</a></li>
   </ul>
 </nav>
-<main class="main-content">
-  <section class="pt-5">
-    <h1>Ejes de la ESI</h1>
-    <p>Contenido de la sección ejes de la esi...</p>
-  </section>
+  <main class="contenido-principal">
+    <section class="seccion-ejes pt-5" aria-label="Ejes de la Educación Sexual Integral">
+      <h1 class="titulo-principal">Ejes de la Educación Sexual Integral (Ley 26.150)</h1>
+
+      <nav class="ejes-circulos" role="list" aria-label="Lista de ejes ESI">
+        <a href="#eje-1" class="eje eje-1" role="listitem" tabindex="0">Cuidar el cuerpo y la salud</a>
+        <a href="#eje-2" class="eje eje-2" role="listitem" tabindex="0">Respetar la diversidad</a>
+        <a href="#eje-3" class="eje eje-3" role="listitem" tabindex="0">Ejercer nuestros derechos</a>
+        <a href="#eje-4" class="eje eje-4" role="listitem" tabindex="0">Perspectiva de género</a>
+        <a href="#eje-5" class="eje eje-5" role="listitem" tabindex="0">Valorar la afectividad</a>
+      </nav>
+
+      <section id="eje-1" class="bloque-eje eje-1" tabindex="-1">
+        <h2>Cuidar el cuerpo y la salud</h2>
+        <p><strong>Dimensión biológica:</strong> Conocimiento del cuerpo, cambios durante la pubertad, higiene, prevención de enfermedades e infecciones de transmisión sexual (ITS), métodos anticonceptivos.</p>
+        <p><strong>Dimensión comunicacional:</strong> Comunicación asertiva sobre el cuidado del cuerpo, límites personales y la importancia de pedir ayuda.</p>
+        <p><strong>Dimensión ética-social:</strong> Respeto por el cuerpo propio y ajeno, consentimiento y prevención de violencias.</p>
+        <p><strong>Derechos:</strong> Acceder a información sobre salud sexual y reproductiva, atención médica adecuada y confidencialidad.</p>
+        <p><strong>Obligaciones:</strong> Cuidar el cuerpo propio y respetar el de los demás.</p>
+      </section>
+
+      <section id="eje-2" class="bloque-eje eje-2" tabindex="-1">
+        <h2>Respetar la diversidad</h2>
+        <p><strong>Dimensión cultural y social:</strong> Reconocimiento y valoración de la diversidad cultural, étnica, religiosa y de género.</p>
+        <p><strong>Dimensión afectiva:</strong> Promoción del respeto hacia distintas orientaciones sexuales e identidades de género.</p>
+        <p><strong>Dimensión ética:</strong> No discriminación, prevención del bullying y fomento de la inclusión.</p>
+        <p><strong>Derechos:</strong> Ser respetado y reconocido en la identidad propia sin discriminación.</p>
+        <p><strong>Obligaciones:</strong> No discriminar ni acosar por motivos de identidad o diversidad.</p>
+      </section>
+
+      <section id="eje-3" class="bloque-eje eje-3" tabindex="-1">
+        <h2>Ejercer nuestros derechos</h2>
+        <p><strong>Dimensión legal:</strong> Conocimiento y acceso a los derechos sexuales y reproductivos reconocidos por la ley nacional.</p>
+        <p><strong>Dimensión política:</strong> Participación activa en la defensa y promoción de estos derechos en la comunidad.</p>
+        <p><strong>Dimensión ética:</strong> Responsabilidad individual y colectiva en el respeto y cuidado de los derechos propios y ajenos.</p>
+        <p><strong>Derechos:</strong> Conocer y hacer valer los derechos sexuales y reproductivos.</p>
+        <p><strong>Obligaciones:</strong> Defender y promover los derechos de todas las personas.</p>
+      </section>
+
+      <section id="eje-4" class="bloque-eje eje-4" tabindex="-1">
+        <h2>Perspectiva de género</h2>
+        <p><strong>Dimensión crítica:</strong> Análisis y cuestionamiento de estereotipos y roles de género tradicionales.</p>
+        <p><strong>Dimensión social:</strong> Promoción de la igualdad y prevención de violencias basadas en género.</p>
+        <p><strong>Dimensión educativa:</strong> Incorporación de la perspectiva de género en prácticas pedagógicas.</p>
+        <p><strong>Derechos:</strong> Vivir libre de violencias y discriminación por género.</p>
+        <p><strong>Obligaciones:</strong> Cuestionar y desmontar estereotipos y conductas sexistas.</p>
+      </section>
+
+      <section id="eje-5" class="bloque-eje eje-5" tabindex="-1">
+        <h2>Valorar la afectividad</h2>
+        <p><strong>Dimensión emocional:</strong> Reconocimiento y expresión saludable de emociones y sentimientos.</p>
+        <p><strong>Dimensión relacional:</strong> Fomento de vínculos afectivos basados en el respeto y la empatía.</p>
+        <p><strong>Dimensión ética:</strong> Escucha activa y respeto por los sentimientos ajenos.</p>
+        <p><strong>Derechos:</strong> Expresar emociones sin miedo ni prejuicios.</p>
+        <p><strong>Obligaciones:</strong> Respetar y valorar las emociones propias y de otros.</p>
+      </section>
+
+    </section>
+  </main>
 </main>
+<script src="../js/circulosEjes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<footer class="footer bg-light p-3 mt-5 text-center">
+  <p class="text-muted small mb-0">© 2025 | Desarrollo: Cátedra Drelichman - UNA</p>
+</footer>
 </html>

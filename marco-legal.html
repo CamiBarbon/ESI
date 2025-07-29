@@ -8,6 +8,35 @@
   <link rel="stylesheet" href="css/estilos.css" />
 </head>
 <body>
+  <!-- Menú hamburguesa mobile -->
+  <nav class="navbar navbar-dark d-md-none" style="background-color: rgba(0, 0, 0, 0.6);">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <span class="navbar-brand">ESI en la Escuela Media</span>
+    </div>
+  </nav>
+
+  <!-- Menú lateral mobile -->
+  <div class="offcanvas offcanvas-start text-white" id="mobileMenu" tabindex="-1" style="background-color: rgba(0, 0, 0, 0.85);">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Menú</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="nav flex-column">
+        <li><a href="index.html" class="nav-link text-white">Inicio</a></li>
+        <li><a href="marco-legal.html" class="nav-link text-white">Conocé la Ley</a></li>
+        <li><a href="principios.html" class="nav-link text-white">Enfoques</a></li>
+        <li><a href="ejes/index.html" class="nav-link text-white">Ejes ESI</a></li>
+        <li><a href="aula/index.html" class="nav-link text-white">Para el aula</a></li>
+        <li><a href="participemos/index.html" class="nav-link text-white">Participemos</a></li>
+        <li><a href="recursos/index.html" class="nav-link text-white">Recursos</a></li>
+        <li><a href="contacto.html" class="nav-link text-white">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
 <nav id="sidebarMenu" class="sidebar d-none d-md-block">
   <ul class="nav flex-column">
     <li><a href="index.html">Inicio</a></li>
@@ -20,11 +49,74 @@
     <li><a href="contacto.html">Contacto</a></li>
   </ul>
 </nav>
-<main class="main-content">
+<main class="main-content timeline-main text-white">
   <section class="pt-5">
-    <h1>Marco legal</h1>
-    <p>Contenido de la sección marco legal...</p>
+    <h1>Historicidad de la Ley 26.150, antecedentes y repercuciones</h1>
+     <section class="timeline-horizontal">
+      <div class="event event-top pastel-1">
+        <div class="content">
+          <div class="year">1993</div>
+          <h3>Primer antecedente</h3>
+          <p>Se crea el Programa Nacional de Salud Sexual y Procreación Responsable.</p>
+        </div>
+      </div>
+
+      <div class="event event-bottom pastel-2">
+        <div class="content">
+          <div class="year">1998</div>
+          <h3>Diseño Curricular Federal</h3>
+          <p>Incorpora temas de sexualidad, sin obligatoriedad ni sistematización.</p>
+        </div>
+      </div>
+
+      <div class="event event-top pastel-3">
+        <div class="content">
+          <div class="year">2006</div>
+          <h3>Sanción de la Ley 26.150</h3>
+          <p>Se aprueba la Ley de Educación Sexual Integral con amplio apoyo en el Congreso.</p>
+        </div>
+      </div>
+
+      <div class="event event-bottom pastel-4">
+        <div class="content">
+          <div class="year">2012</div>
+          <h3>Fallo “Portillo”</h3>
+          <p>La Corte Suprema confirma que ninguna escuela puede negar contenidos ESI por motivos religiosos.</p>
+        </div>
+      </div>
+
+      <div class="event event-top pastel-5">
+        <div class="content">
+          <div class="year">2019</div>
+          <h3>Informe UNICEF</h3>
+          <p>7 de cada 10 adolescentes dicen no haber recibido ESI en profundidad.</p>
+        </div>
+      </div>
+
+      <div class="event event-bottom pastel-1">
+        <div class="content">
+          <div class="year">2021</div>
+          <h3>Encuesta FUSA - UNFPA</h3>
+          <p>78% de jóvenes piden más contenidos sobre consentimiento, diversidad y prevención de violencias.</p>
+        </div>
+      </div>
+    </section>
   </section>
 </main>
+<div class="conclusion-burbuja" id="burbuja-regional">
+  <button class="cerrar-burbuja" aria-label="Cerrar">&times;</button>
+  <h3>Comparación regional</h3>
+  <ul>
+    <li><strong>Uruguay</strong>: Programa nacional desde 2008.</li>
+    <li><strong>Chile</strong>: Múltiples proyectos bloqueados.</li>
+    <li><strong>Brasil</strong>: Retrocesos con censura de contenidos.</li>
+    <li><strong>Colombia</strong>: Aplicación parcial y desigual.</li>
+  </ul>
+</div>
+<footer class="footer bg-light p-3 mt-5 text-center">
+  <p class="text-muted small mb-0">© 2025 | Desarrollo: Cátedra Drelichman - UNA</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/comparacion.js"></script>
 </body>
 </html>

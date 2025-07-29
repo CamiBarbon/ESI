@@ -8,6 +8,35 @@
   <link rel="stylesheet" href="css/estilos.css" />
 </head>
 <body>
+  <!-- Menú hamburguesa mobile -->
+  <nav class="navbar navbar-dark d-md-none" style="background-color: rgba(0, 0, 0, 0.6);">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <span class="navbar-brand">ESI en la Escuela Media</span>
+    </div>
+  </nav>
+
+  <!-- Menú lateral mobile -->
+  <div class="offcanvas offcanvas-start text-white" id="mobileMenu" tabindex="-1" style="background-color: rgba(0, 0, 0, 0.85);">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Menú</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="nav flex-column">
+        <li><a href="index.html" class="nav-link text-white">Inicio</a></li>
+        <li><a href="marco-legal.html" class="nav-link text-white">Conocé la Ley</a></li>
+        <li><a href="principios.html" class="nav-link text-white">Enfoques</a></li>
+        <li><a href="ejes/index.html" class="nav-link text-white">Ejes ESI</a></li>
+        <li><a href="aula/index.html" class="nav-link text-white">Para el aula</a></li>
+        <li><a href="participemos/index.html" class="nav-link text-white">Participemos</a></li>
+        <li><a href="recursos/index.html" class="nav-link text-white">Recursos</a></li>
+        <li><a href="contacto.html" class="nav-link text-white">Contacto</a></li>
+      </ul>
+    </div>
+  </div>  
 <nav id="sidebarMenu" class="sidebar d-none d-md-block">
   <ul class="nav flex-column">
     <li><a href="index.html">Inicio</a></li>
@@ -22,9 +51,63 @@
 </nav>
 <main class="main-content">
   <section class="pt-5">
-    <h1>Principios y habilidades socioemocionales</h1>
-    <p>Contenido de la sección principios y habilidades socioemocionales...</p>
+    <section class="comparativo-container">
+      <h2>Comparativo: Educación Sexual Integral (Ley 26.150) vs. Habilidades Socioemocionales</h2>
+      <p class="intro">
+        Esta tabla está dirigida a docentes y equipos educativos para analizar críticamente dos enfoques formativos presentes en el sistema educativo argentino. Por un lado, la <strong>Ley Nacional 26.150</strong> establece el derecho de estudiantes a recibir una Educación Sexual Integral con enfoque en derechos humanos, género y diversidad. Por otro, las <strong>Habilidades Socioemocionales (HSE)</strong> han ganado espacio desde organismos internacionales y programas focalizados, priorizando competencias personales sobre vínculos sociales.
+      </p>
+
+      <table class="comparativo-tabla">
+        <thead>
+          <tr>
+            <th>Dimensión</th>
+            <th>Enfoque ESI (Ley 26.150)</th>
+            <th>Habilidades Socioemocionales (HSE)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Marco normativo</td>
+            <td>Obligatoria en todos los niveles y modalidades según la Ley 26.150 (2006), con anclaje en tratados de derechos humanos y en resoluciones del Consejo Federal de Educación.</td>
+            <td>No cuenta con legislación específica; se basa en lineamientos de organismos como UNESCO o BID, adoptados por programas locales (ej. "Educación Emocional").</td>
+          </tr>
+          <tr>
+            <td>Finalidad</td>
+            <td>Garantizar derechos, construir ciudadanía y promover relaciones respetuosas y equitativas. Perspectiva crítica e inclusiva.</td>
+            <td>Fortalecer la autorregulación emocional, la autoestima y la toma de decisiones individuales. Enfoque más instrumental.</td>
+          </tr>
+          <tr>
+            <td>Contenido</td>
+            <td>Género, diversidad, corporalidad, afectividad, derechos sexuales y reproductivos. Integra lo biológico, lo psicológico, lo social y lo ético.</td>
+            <td>Gestión de emociones, empatía, resiliencia, habilidades sociales. Poca vinculación con corporalidad, género o derechos.</td>
+          </tr>
+          <tr>
+            <td>Rol docente</td>
+            <td>Agente de derechos y facilitador del diálogo y la reflexión crítica colectiva.</td>
+            <td>Mediador de habilidades individuales, con foco en climas emocionales y autocuidado personal.</td>
+          </tr>
+          <tr>
+            <td>Metodología</td>
+            <td>Participativa, situada, transversal e interdisciplinaria. Promueve aprendizajes colectivos desde la experiencia y el diálogo.</td>
+            <td>Dinámicas introspectivas o grupales centradas en el entrenamiento emocional. Menor anclaje en el contexto social.</td>
+          </tr>
+          <tr>
+            <td>Evaluación</td>
+            <td>No estandarizada. Se valoran procesos, vínculos y construcción de sentido. Enfatiza la ética del cuidado y el respeto mutuo.</td>
+            <td>Seguimiento individual de conductas o indicadores emocionales. Riesgo de psicologización del conflicto escolar.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="conclusion">
+        <em>Si bien las habilidades socioemocionales pueden complementar el trabajo áulico, es esencial sostener marcos legales como la Ley 26.150 que promuevan la justicia social, la igualdad y el derecho a la educación sexual integral desde una perspectiva crítica, democrática y situada.</em>
+      </p>
+    </section>
   </section>
 </main>
+<footer class="footer bg-light p-3 mt-5 text-center">
+  <p class="text-muted small mb-0">© 2025 | Desarrollo: Cátedra Drelichman - UNA</p>
+</footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

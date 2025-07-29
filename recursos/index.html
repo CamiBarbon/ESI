@@ -8,6 +8,35 @@
   <link rel="stylesheet" href="../css/estilos.css" />
 </head>
 <body>
+      <!-- Menú hamburguesa mobile -->
+  <nav class="navbar navbar-dark d-md-none" style="background-color: rgba(0, 0, 0, 0.6);">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <span class="navbar-brand">ESI en la Escuela Media</span>
+    </div>
+  </nav>
+
+  <!-- Menú lateral mobile -->
+  <div class="offcanvas offcanvas-start text-white" id="mobileMenu" tabindex="-1" style="background-color: rgba(0, 0, 0, 0.85);">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Menú</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="nav flex-column">
+  <li><a href="../index.html">Inicio</a></li>
+  <li><a href="../marco-legal.html">Conocé la Ley</a></li>
+  <li><a href="../principios.html">Enfoques</a></li>
+  <li><a href="../ejes/index.html">Ejes ESI</a></li>
+  <li><a href="../aula/index.html">Para el aula</a></li>
+  <li><a href="../participemos/index.html">Participemos</a></li>
+  <li><a href="../recursos/index.html">Recursos</a></li>
+  <li><a href="../contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
 <nav id="sidebarMenu" class="sidebar d-none d-md-block">
   <ul class="nav flex-column">
   <li><a href="../index.html">Inicio</a></li>
@@ -22,9 +51,62 @@
 </nav>
 <main class="main-content">
   <section class="pt-5">
-    <h1>Recursos</h1>
-    <p>Contenido de la sección recursos...</p>
+    <h1>¿Sos docente y estás pensando en dar ESI?</h1>
+    <p>Acá vas a encontrar diferentes recursos didácticos para el aula...</p>
+    <section class="galeria-tetris">
+  <h2>📁 Contenidos descargables</h2>
+  <div class="tetris-grid">
+    
+    <div class="mosaico t1" onclick="descargarArchivo('guia-docentes.pdf')">
+      <span>📘</span>
+      <p>Guía Docente</p>
+      <div class="tooltip">Propuestas pedagógicas para el aula</div>
+    </div>
+
+    <div class="mosaico t2" onclick="descargarArchivo('afiche-esi.pdf')">
+      <span>🖼️</span>
+      <p>Afiche ESI</p>
+      <div class="tooltip">Afiche ilustrado para imprimir o compartir</div>
+    </div>
+
+    <div class="mosaico t3" onclick="descargarArchivo('ficha-estudiantes.pdf')">
+      <span>📝</span>
+      <p>Ficha para estudiantes</p>
+      <div class="tooltip">Actividad para reflexionar en grupo</div>
+    </div>
+
+    <div class="mosaico t4" onclick="descargarArchivo('linea-tiempo-esi.pdf')">
+      <span>📅</span>
+      <p>Línea de tiempo</p>
+      <div class="tooltip">Historia de la Ley de ESI y sus antecedentes</div>
+    </div>
+
+    <div class="mosaico t5" onclick="descargarArchivo('juego-oca.pdf')">
+      <span>🎲</span>
+      <p>Juego ESI</p>
+      <div class="tooltip">Tablero imprimible tipo “la oca” con preguntas</div>
+    </div>
+
+    <div class="mosaico t6" onclick="descargarArchivo('afiche-derechos.pdf')">
+      <span>📌</span>
+      <p>Afiche de Derechos</p>
+      <div class="tooltip">Derechos sexuales y reproductivos</div>
+    </div>
+
+    <div class="mosaico t7" onclick="descargarArchivo('actividades-integrales.pdf')">
+      <span>🔧</span>
+      <p>Actividades integrales</p>
+      <div class="tooltip">Secuencias didácticas transversales</div>
+    </div>
+
+  </div>
+</section>
   </section>
 </main>
+<script src="../js/descargar.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<footer class="footer bg-light p-3 mt-5 text-center">
+  <p class="text-muted small mb-0">© 2025 | Desarrollo: Cátedra Drelichman - UNA</p>
+</footer>
 </html>
