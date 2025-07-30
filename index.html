@@ -12,17 +12,7 @@
 </head>
 <body>
 
-  <!-- Menú hamburguesa mobile -->
-  <nav class="navbar navbar-dark d-md-none" style="background-color: rgba(0, 0, 0, 0.6);">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <span class="navbar-brand">ESI en la Escuela Media</span>
-    </div>
-  </nav>
-
-  <!-- Menú lateral mobile -->
+<!-- Menú lateral mobile -->
   <div class="offcanvas offcanvas-start text-white" id="mobileMenu" tabindex="-1" style="background-color: rgba(0, 0, 0, 0.85);">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title">Menú</h5>
@@ -39,6 +29,16 @@
       </ul>
     </div>
   </div>
+  <nav id="sidebarMenu" class="sidebar d-none d-md-block">
+    <ul class="nav flex-column">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="marco-legal.html">Conocé la Ley</a></li>
+      <li><a href="principios.html">Enfoques</a></li>
+      <li><a href="ejes/index.html">Ejes ESI</a></li>
+      <li><a href="aula/index.html">Para el aula</a></li>
+      <li><a href="participemos/index.html">Participemos</a></li>
+    </ul>
+  </nav>
 
   <!-- Menú lateral desktop -->
   <nav id="sidebarMenu" class="sidebar d-none d-md-block">
