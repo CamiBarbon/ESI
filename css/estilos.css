@@ -28,7 +28,7 @@ body {
   height: 100vh;
   width: 70px;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(138, 138, 138, 0.377);
   backdrop-filter: blur(5px);
   z-index: 1000;
   transition: width 0.3s;
@@ -99,23 +99,22 @@ body {
 }
 
 .eje {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   width: 160px;
   height: 160px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.2);
   border: 2px solid white;
   color: rgb(0, 0, 0);
-  text-align: center;
   padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(5px); /* este parece que quedó cortado como "backd" */
 }
 
 /* Colores base para cada eje */
@@ -153,7 +152,18 @@ body {
 .eje:active .info-eje {
   display: block;
 }
-
+a:link {
+  color: #6123b3;
+}
+a:visited {
+  color: #444;
+}
+a:hover {
+  color: #41267e;
+}
+a:active {
+  color: #000;
+}
 /* ------------------------------
    Form contacto
 ------------------------------ */
@@ -213,9 +223,15 @@ h1 {
   font-size: 2.5rem;
 }
 h2 {
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+  color: #6e49c5;
+  text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.7);
 }
 
+#estudiantes {
+  background-color: #00000027;
+  padding: 2em;
+  
+}
 /* Contenedor vertical */
 .timeline-horizontal {
   position: relative;
@@ -379,12 +395,11 @@ h2 {
   max-width: 900px;
   margin: 3rem auto;
   padding: 1rem 2rem;
-  background: rgba(0,0,0,0.6);
+  background: rgba(245, 245, 245, 0.384);
   border-radius: 12px;
   backdrop-filter: blur(6px);
-  color: white;
-  font-family: Arial, sans-serif;
-  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  color: rgb(12, 12, 12);
+  box-shadow: 0 0 15px rgba(252, 252, 252, 0.4);
 }
 
 .comparativo-container h2 {
@@ -399,7 +414,7 @@ h2 {
   text-align: center;
   margin-bottom: 2rem;
   font-size: 1.1rem;
-  color: #e6e6e6;
+  color: #000000;
 }
 
 .comparativo-tabla {
@@ -416,7 +431,7 @@ h2 {
 }
 
 .comparativo-tabla thead th {
-  background: #7ffaf0;
+  background: #7f81fa;
   color: #000;
   font-weight: 700;
   text-align: center;
@@ -432,9 +447,8 @@ h2 {
 
 .comparativo-container .conclusion {
   margin-top: 2rem;
-  font-style: italic;
-  font-weight: 600;
-  color: #ffd27f;
+  font-weight: 500;
+  color: #000000;
   text-align: center;
   max-width: 700px;
   margin-left: auto;
@@ -683,12 +697,12 @@ button {
     opacity: 1;
   }
     .titulo-principal {
-      font-weight: 900;
+      font-weight: 750;
       font-size: 2.5rem;
       text-align: center;
       margin-bottom: 2rem;
-      color: white;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+      color: rgb(255, 222, 133);
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.575);
     }
     /* Círculos de ejes */
     .ejes-circulos {
@@ -738,7 +752,7 @@ button {
       max-width: 900px;
       margin-left: auto;
       margin-right: auto;
-      box-shadow: 0 0 30px rgba(0,0,0,0.1);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
       scroll-margin-top: 80px; /* para que no quede pegado al tope en scroll */
     }
     .bloque-eje h2 {

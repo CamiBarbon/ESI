@@ -12,7 +12,17 @@
 </head>
 <body>
 
-<!-- Menú lateral mobile -->
+     <!-- Menú hamburguesa mobile -->
+  <nav class="navbar navbar-dark d-md-none" style="background-color: rgba(0, 0, 0, 0.6);">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <span class="navbar-brand">ESI en la Escuela Media</span>
+    </div>
+  </nav>
+
+  <!-- Menú lateral-->
   <div class="offcanvas offcanvas-start text-white" id="mobileMenu" tabindex="-1" style="background-color: rgba(0, 0, 0, 0.85);">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title">Menú</h5>
@@ -29,18 +39,7 @@
       </ul>
     </div>
   </div>
-  <nav id="sidebarMenu" class="sidebar d-none d-md-block">
-    <ul class="nav flex-column">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="marco-legal.html">Conocé la Ley</a></li>
-      <li><a href="principios.html">Enfoques</a></li>
-      <li><a href="ejes/index.html">Ejes ESI</a></li>
-      <li><a href="aula/index.html">Para el aula</a></li>
-      <li><a href="participemos/index.html">Participemos</a></li>
-    </ul>
-  </nav>
-
-  <!-- Menú lateral desktop -->
+  
   <nav id="sidebarMenu" class="sidebar d-none d-md-block">
     <ul class="nav flex-column">
       <li><a href="index.html">Inicio</a></li>
@@ -85,20 +84,20 @@
 
       <!-- Círculos Ejes ESI -->
       <div class="ejes-circulos mb-5 d-none d-md-flex">
-        <div class="eje eje-1" data-titulo="Cuidar el cuerpo y la salud" data-contenido="✅ Derecho: Acceder a información sobre salud. <br>📌 Obligación: Cuidar el cuerpo propio y ajeno.">
-          <span class="texto-eje">Cuidar el cuerpo y la salud</span>
+        <div class="eje eje-1">
+          <a href="./ejes/index.html#eje-1" class="texto-eje">Cuidar el cuerpo y la salud</a>
         </div>
-        <div class="eje eje-2" data-titulo="Respetar la diversidad" data-contenido="✅ Derecho: Ser respetado en tu identidad. <br>📌 Obligación: No discriminar ni burlarse.">
-          <span class="texto-eje">Respetar la diversidad</span>
+        <div class="eje eje-2">
+          <a href="./ejes/index.html#eje-2" class="texto-eje">Respetar la diversidad</a>
         </div>
-        <div class="eje eje-3" data-titulo="Ejercer nuestros derechos" data-contenido="✅ Derecho: Conocer tus derechos sexuales. <br>📌 Obligación: Defender los derechos de todes.">
-          <span class="texto-eje">Ejercer derechos</span>
+        <div class="eje eje-3">
+          <a href="./ejes/index.html#eje-3" class="texto-eje">Ejercer derechos</a>
         </div>
-        <div class="eje eje-4" data-titulo="Perspectiva de género" data-contenido="✅ Derecho: Vivir libre de violencias. <br>📌 Obligación: Cuestionar estereotipos.">
-          <span class="texto-eje">Reconocer la perspectiva de género</span>
+        <div class="eje eje-4">
+          <a href="./ejes/index.html#eje-4"class="texto-eje">Reconocer la perspectiva de género</a>
         </div>
-        <div class="eje eje-5" data-titulo="Valorar la afectividad" data-contenido="✅ Derecho: Expresar emociones sin miedo. <br>📌 Obligación: Escuchar y respetar los sentimientos.">
-          <span class="texto-eje">Valorar la afectividad</span>
+        <div class="eje eje-5">
+          <a href="./ejes/index.html#eje-5" class="texto-eje"> Valorar la afectividad</a>
         </div>
       </div>
 
