@@ -7,10 +7,8 @@ body {
   padding: 0;
   font-family: "Rubik", sans-serif;
   color: white;
-  background: linear-gradient(90deg,
-    rgba(135, 120, 235, 0.801) 0%,
-    rgba(123, 241, 177, 0.87) 49%,
-    rgba(255, 231, 77, 0.87) 100%);
+  background: linear-gradient(to bottom right, rgba(135, 120, 235, 0.801) 0%, rgba(123, 241, 177, 0.87) 49%, rgba(255, 231, 77, 0.87) 100%);
+
   min-height: 100vh;
 }
 
@@ -131,21 +129,6 @@ body {
   height: 200px;
   font-size: 0.9rem;
   border-color: rgb(255, 153, 0);
-}
-
-/* Tooltip / Info extra del eje */
-.info-eje {
-  display: none;
-  position: absolute;
-  top: 100%;
-  margin-top: 1rem;
-  padding: 0.8rem;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  text-align: left;
 }
 
 .eje:focus .info-eje,
@@ -417,7 +400,13 @@ h2 {
   color: #000000;
 }
 
+.tabla-scroll {
+  overflow-x: auto;
+  width: 100%;
+}
+
 .comparativo-tabla {
+  min-width: 600px;
   width: 100%;
   border-collapse: collapse;
   font-size: 1rem;
@@ -454,6 +443,42 @@ h2 {
   margin-left: auto;
   margin-right: auto;
 }
+
+.comparativo-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.card-comparativa {
+  background: #ffffff;
+  border-left: 4px solid #7a7aee;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.card-comparativa .dimension {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #222;
+  margin-bottom: 0.75rem;
+}
+
+.card-bloque h5 {
+  font-weight: 600;
+  color: #6a5acd;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.card-bloque p {
+  margin: 0 0 0.8rem 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
 
 /* ------------------------------
    Participemos (sección mapa de iniciativas)
@@ -1058,4 +1083,5 @@ button {
     font-size: 0.85rem;
     padding: 6px 12px;
   }
+  
 }
