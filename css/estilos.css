@@ -8,7 +8,6 @@ body {
   font-family: "Rubik", sans-serif;
   color: white;
   background: linear-gradient(to bottom right, rgba(135, 120, 235, 0.801) 0%, rgba(123, 241, 177, 0.87) 49%, rgba(255, 231, 77, 0.87) 100%);
-
   min-height: 100vh;
 }
 
@@ -16,6 +15,24 @@ body {
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
+}
+
+.barriecito-regular {
+  font-family: "Barriecito", system-ui;
+  font-weight: 600;
+  font-style: larger;
+}
+
+h1 {
+  font-family: "Barriecito";
+  margin-bottom: 3rem;
+  font-weight: 1200;
+  text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.7);
+}
+h2 {
+  color: #6e49c5;
+  font-size: x-large;
+  text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.7);
 }
 
 /* Sidebar Desktop */
@@ -65,7 +82,18 @@ body {
   background: rgba(255, 255, 255, 0.15);
   border-radius: 5px;
 }
-
+.navbar-brand a:link {
+  color: #9b6adb;
+}
+.navbar-brand a:hover {
+  color: #c8b2e6;
+}
+.navbar-brand a:active {
+  color:#e3e66a
+}
+.navbar-brand a:visited {
+  color: white;
+}
 /* ------------------------------
    Contenido principal
 ------------------------------ */
@@ -82,6 +110,31 @@ body {
 .pt-5 {
   padding-top: 3rem;
 }
+.card {
+  background-color: transparent;
+  border: none; /* Opcional: si querés quitar el borde por defecto */
+}
+.card-body {
+    text-decoration: none;
+     background: rgba(255, 255, 255, 0.377);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      color: #2a2a4e;
+}
+
+.card-body:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card-body h5 {
+  margin-top: 0;
+  margin-bottom: 0.7rem;
+  font-weight: 700;
+}
 
 /* ------------------------------
    Círculos de Ejes ESI
@@ -97,6 +150,7 @@ body {
 }
 
 .eje {
+  text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,7 +158,7 @@ body {
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.541);
   border: 2px solid white;
   color: rgb(0, 0, 0);
   padding: 1rem;
@@ -112,7 +166,6 @@ body {
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  backdrop-filter: blur(5px); /* este parece que quedó cortado como "backd" */
 }
 
 /* Colores base para cada eje */
@@ -124,7 +177,7 @@ body {
 
 /* Círculo activo (al clickear) */
 .eje.activo {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(255, 255, 255, 0.6);
   width: 200px;
   height: 200px;
   font-size: 0.9rem;
@@ -151,29 +204,65 @@ a:active {
    Form contacto
 ------------------------------ */
 .contact-form-container {
-  background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
-  color: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  color: #2a2a4e;
   margin: 2rem auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form-container:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.contact-form-container h2 {
+  font-weight: 600;
+  color: #6123b3;
+  margin-bottom: 1rem;
 }
 
 .contact-form-container input,
 .contact-form-container textarea {
-  background-color: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.4);
-  color: white;
+  background-color: rgba(168, 125, 224, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  color: #2a2a4e;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  width: 100%;
 }
 
 .contact-form-container input::placeholder,
 .contact-form-container textarea::placeholder {
-  color: rgba(255,255,255,0.6);
+  color: rgba(42, 42, 78, 0.6);
 }
 
 .contact-form-container .form-control:focus {
   border-color: #ffd27f;
-  box-shadow: 0 0 5px #ffd27f;
-  background-color: rgba(255,255,255,0.15);
+  box-shadow: 0 0 8px #ffd27f;
+  background-color: rgba(255, 255, 255, 0.3);
+  outline: none;
+  color: #2a2a4e;
+}
+
+.contact-form-container button {
+  background-color: #6123b3;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form-container button:hover {
+  background-color: #4a198b;
+  transform: scale(1.05);
 }
 
 /* ------------------------------
@@ -200,21 +289,17 @@ a:active {
   color: white;
   text-align: center;
 }
-h1 {
-  margin-bottom: 3rem;
-  font-weight: 900;
-  font-size: 2.5rem;
-}
-h2 {
-  color: #6e49c5;
-  text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.7);
-}
+
 
 #estudiantes {
   background-color: #00000027;
   padding: 2em;
-  
 }
+#materiales-docentes {
+    background-color: #00000027;
+  padding: 2em;
+}
+
 /* Contenedor vertical */
 .timeline-horizontal {
   position: relative;
@@ -481,7 +566,7 @@ h2 {
 
 
 /* ------------------------------
-   Participemos (sección mapa de iniciativas)
+   Participemos 
 ------------------------------ */
 .participemos-container {
   max-width: 900px;
@@ -491,12 +576,6 @@ h2 {
   text-align: center;
 }
 
-.participemos-container h2 {
-  font-weight: 700;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-}
-
 .participemos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -504,25 +583,27 @@ h2 {
 }
 
 .participemos-card {
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(5px);
-  padding: 1.5rem;
-  border-radius: 15px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
-  text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+     background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      color: #2a2a4e;
+      text-decoration: none;
 }
 
 .participemos-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .participemos-card h3 {
   margin-top: 0;
   margin-bottom: 0.7rem;
   font-weight: 700;
-  color: #ffd27f;
+  color: #6123b3;
 }
 
 .participemos-card p {
@@ -533,7 +614,7 @@ h2 {
 
 .participemos-card a {
   display: inline-block;
-  color: #a6d8ff;
+  color:  #9451eb;
   margin-right: 1rem;
   text-decoration: none;
   font-weight: 600;
@@ -542,7 +623,7 @@ h2 {
 }
 
 .participemos-card a:hover {
-  color: #62fcb4;
+  color: #6123b3;
 }
 .board {
   display: grid;
@@ -773,7 +854,7 @@ button {
       padding: 2rem 3rem;
       margin-bottom: 3rem;
       border-radius: 15px;
-      color: #000;
+      color: #272727;
       max-width: 900px;
       margin-left: auto;
       margin-right: auto;
@@ -782,7 +863,7 @@ button {
     }
     .bloque-eje h2 {
       margin-top: 0;
-      font-weight: 900;
+      font-weight: 700;
       margin-bottom: 1rem;
       font-size: 1.8rem;
     }
@@ -975,30 +1056,74 @@ button {
   margin-top: 0.5rem;
 }
 
+    .docente-inicio {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem 1rem;
+    }
 
-/* Link simple para ATAM UNA 2025 */
-.footer-link {
-  color: #197477; /* color eje 3 */
-  font-weight: 700;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
+    .card-grid {
+       display: grid;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  grid-template-columns: repeat(1, 1fr); 
+    }
 
-.footer-link:hover,
-.footer-link:focus {
-  color: #7ffaf0; /* color eje 4 */
-  text-decoration: underline;
-  outline: none;
-}
+    .doc-card {
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      color: #2a2a4e;
+      text-decoration: none;
+    }
+
+    .doc-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .doc-card i {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: #4c51c6;
+      transition: transform 0.3s ease;
+    }
+
+    .doc-card:hover i {
+      transform: scale(1.2) rotate(5deg);
+    }
+
+    .doc-card h5 {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .doc-card p {
+      font-size: 0.95rem;
+      color: #444;
+    }
+
 
 /* ------------------------------
    Media queries (responsive)
 ------------------------------ */
-@media (min-width: 1920px) {
+@media (min-width: 992px) {
   .main-content {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+  }
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr); 
   }
 }
 
@@ -1083,5 +1208,4 @@ button {
     font-size: 0.85rem;
     padding: 6px 12px;
   }
-  
 }
