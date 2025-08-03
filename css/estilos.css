@@ -35,7 +35,7 @@ h2 {
 }
 
 
-/* Sidebar Desktop */
+/* Menu */
 .sidebar {
   position: fixed;
   top: 0;
@@ -95,7 +95,7 @@ h2 {
   color: white;
 }
 /* ------------------------------
-   Contenido principal
+   Contenido 
 ------------------------------ */
 .main-content {
   padding: 20px;
@@ -104,15 +104,12 @@ h2 {
   margin-right: auto;
 }
 
-/* ------------------------------
-   Jumbotron principal
------------------------------- */
 .pt-5 {
   padding-top: 3rem;
 }
 .card {
   background-color: transparent;
-  border: none; /* Opcional: si querés quitar el borde por defecto */
+  border: none; 
 }
 .card-body {
     text-decoration: none;
@@ -136,12 +133,9 @@ h2 {
   font-weight: 700;
 }
 
-/* ------------------------------
-   Círculos de Ejes ESI
------------------------------- */
 .ejes-circulos {
   display: flex;
-  flex-wrap: nowrap;  /* sin salto de línea */
+  flex-wrap: nowrap; 
   justify-content: center;
   gap: 1.5rem;
   padding: 2rem;
@@ -174,14 +168,6 @@ h2 {
 .eje-4 { background-color: #7ffaf0; }
 .eje-5 { background-color: #c2cbf5; }
 
-/* Círculo activo (al clickear) */
-.eje.activo {
-  background-color: rgba(255, 255, 255, 0.6);
-  width: 200px;
-  height: 200px;
-  font-size: 0.9rem;
-  border-color: rgb(255, 153, 0);
-}
 
 .eje:focus .info-eje,
 .eje:active .info-eje {
@@ -264,23 +250,11 @@ a:active {
   transform: scale(1.05);
 }
 
-/* ------------------------------
-   Offcanvas
------------------------------- */
-.offcanvas-body {
-  padding-top: 1rem;
-  font-size: 1.1rem;
+#estudiantes {
+  background-color: #00000027;
+  padding: 2em;
 }
-
-.offcanvas {
-  max-width: 250px;
-  background-color: rgba(0, 0, 0, 0.85);
-  color: white;
-}
-
-/* ------------------------------
-   Timeline
------------------------------- */
+/* Linea de tiempo */
 .timeline-main {
   max-width: 700px;
   margin: 2rem auto 4rem auto;
@@ -288,17 +262,6 @@ a:active {
   color: white;
   text-align: center;
 }
-
-
-#estudiantes {
-  background-color: #00000027;
-  padding: 2em;
-}
-#materiales-docentes {
-    background-color: #00000027;
-  padding: 2em;
-}
-
 /* Contenedor vertical */
 .timeline-horizontal {
   position: relative;
@@ -309,7 +272,6 @@ a:active {
   padding-right: 2rem;
 }
 
-/* Línea vertical central */
 .timeline-horizontal::before {
   content: "";
   position: absolute;
@@ -321,8 +283,6 @@ a:active {
   transform: translateX(-50%);
   z-index: 0;
 }
-
-/* Cada evento */
 .event {
   position: relative;
   width: 300px;
@@ -333,23 +293,19 @@ a:active {
   transition: transform 0.3s ease;
 }
 
-/* Hover efecto */
 .event:hover {
   transform: scale(1.05);}
 
-/* Eventos a la izquierda */
 .event-top {
   align-self: flex-start;
   margin-left: calc(50% - 320px);
 }
 
-/* Eventos a la derecha */
 .event-bottom {
   align-self: flex-end;
   margin-right: calc(50% - 320px);
 }
 
-/* Contenido interno */
 .content {
   background: transparent;
   color: #000;
@@ -358,20 +314,18 @@ a:active {
   box-shadow: 0 0 60px 20px rgba(94, 94, 94, 0.6); /* pastel amarillo difuso */
 }
 
-/* Animación al pasar el mouse */
 .event:hover .content {
   transform: scale(1.03);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* Colores pastel combinando con ejes ESI */
+
 .pastel-1 .content { background-color: #fcf26a; }
 .pastel-2 .content { background-color: #b0f086; }
 .pastel-3 .content { background-color: #62fcb4; }
 .pastel-4 .content { background-color: #7ffaf0; }
 .pastel-5 .content { background-color: #c2cbf5; }
 
-/* Año destacado */
 .year {
   color:rgba(144, 80, 247, 0.863);
   font-weight: bold;
@@ -379,20 +333,17 @@ a:active {
   margin-bottom: 0.3rem;
 }
 
-/* Títulos */
 .content h3 {
   margin-top: 0;
   margin-bottom: 0.6rem;
   font-weight: 700;
 }
 
-/* Lista en contenido región */
 .content ul {
   padding-left: 1.2rem;
   margin: 0;
 }
 
-/* Burbuja de conclusión */
 .conclusion-burbuja {
   position: fixed;
   top: 1.5rem;
@@ -411,7 +362,6 @@ a:active {
   transform: translateY(-10px);
   transition: all 0.6s ease;
 }
-
 
 .conclusion-burbuja h3 {
   font-size: 1.1rem;
@@ -448,9 +398,7 @@ a:active {
   color: #444;
 }
 
-/* ------------------------------
-   Cuadro comparativo (comparativo)
------------------------------- */
+/*  Cuadro comparativo */
 .comparativo-container {
   max-width: 900px;
   margin: 3rem auto;
@@ -557,9 +505,7 @@ a:active {
 }
 
 
-/* ------------------------------
-   Participemos 
------------------------------- */
+/*  Participemos  */
 .participemos-container {
   max-width: 900px;
   margin: 2rem auto 4rem auto;
@@ -689,7 +635,7 @@ button {
   list-style: none;
   margin-bottom: 1rem;
   padding: 1rem;
-  background-color: #fdf4ff; /* pastel base */
+  background-color: #fdf4ff; 
   border-radius: 50%;
   width: 100px;
   height: 100px;
@@ -703,7 +649,7 @@ button {
   box-shadow: 0 0 12px rgba(0,0,0,0.2);
 }
 
-  .galeria-tetris {
+.galeria-tetris {
     padding: 2rem 1rem;
     text-align: center;
     color: white;
@@ -860,20 +806,6 @@ button {
       font-size: 1.8rem;
     }
 
-#introESI {
-  background: rgba(255, 255, 255, 0.103);
-  color: #111;
-  padding: 1.5rem;
-  border-left: 5px solid #8b2cff; /* opcional, un toque violeta ESI */
-  margin-bottom: 1rem;
-  border-radius: 6px;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
-}
-#introESI p, #introESI li {
-  color: #222;
-  font-size: 1rem;
-  line-height: 1.5;
-}
 /* juego oca */
 .tablero-container {
   position: relative;
@@ -917,7 +849,6 @@ button {
 }
 
 
-/* Estilo de pregunta con opciones */
 #opciones {
   display: flex;
   flex-wrap: wrap;
@@ -925,52 +856,47 @@ button {
 }
 
 .ranking-container {
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 2.5rem;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      max-width: 500px;
-      width: 100%;
-    }
-
-    .ranking-container h1 {
-      font-weight: 700;
-      font-size: 2rem;
-      color: #333;
-      margin-bottom: 1.5rem;
-    }
-
-    .ranking-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    .ranking-list li {
-      background-color: #fff;
-      border-radius: 100px;
-      padding: 1rem 1.5rem;
-      margin: 0.5rem 0;
-      font-weight: 600;
-      font-size: 1.1rem;
-      color: #444;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    .btn-volver {
-      margin-top: 2rem;
-      background-color: #ffd27f;
-      border: none;
-      padding: 0.7rem 1.5rem;
-      font-weight: 600;
-      border-radius: 50px;
-      color: #2a2a4e;
-    }
-
-    .btn-volver:hover {
-      background-color: #fbc452;
-    }
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+.ranking-container h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+.ranking-list {
+  list-style: none;
+  padding: 0;
+}
+.ranking-list li {
+  background-color: #fff;
+  border-radius: 100px;
+  padding: 1rem 1.5rem;
+  margin: 0.5rem 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #444;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.btn-volver {
+  margin-top: 2rem;
+  background-color: #ffd27f;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  border-radius: 50px;
+  color: #2a2a4e;
+}
+.btn-volver:hover {
+  background-color: #fbc452;
+}
 
 .footer {
   background-color: #9181ec9a; /* fondo oscuro */
@@ -981,79 +907,55 @@ button {
   font-family: Arial, sans-serif;
   margin-top: 40px;
 }
-/* Link botón para contacto con colores ejes */
-.footer-btn {
-  display: inline-block;
-  background-color: #fcf26a; /* color eje 1 */
-  color: black;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-weight: 700;
-  text-decoration: none;
-  font-size: 1rem;
-  user-select: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 3px 8px rgba(252, 242, 106, 0.6);
-  margin-top: 0.5rem;
+.docente-inicio {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
 }
 
-    .docente-inicio {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 3rem 1rem;
-    }
-
-    .card-grid {
-       display: grid;
+.card-grid {
+display: grid;
   gap: 2rem;
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
   grid-template-columns: repeat(1, 1fr); 
-    }
-
-    .doc-card {
-      background: rgba(255, 255, 255, 0.5);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 16px;
-      padding: 2rem 1.5rem;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      color: #2a2a4e;
-      text-decoration: none;
-    }
-
-    .doc-card:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    .doc-card i {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-      color: #4c51c6;
-      transition: transform 0.3s ease;
-    }
-
-    .doc-card:hover i {
-      transform: scale(1.2) rotate(5deg);
-    }
-
-    .doc-card h5 {
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .doc-card p {
-      font-size: 0.95rem;
-      color: #444;
-    }
-
+}
+.doc-card {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #2a2a4e;
+  text-decoration: none;
+}
+.doc-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.doc-card i {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #4c51c6;
+  transition: transform 0.3s ease;
+}
+.doc-card:hover i {
+  transform: scale(1.2) rotate(5deg);
+}
+.doc-card h5 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.doc-card p {
+  font-size: 0.95rem;
+  color: #444;
+}
 
 .pantalla {
   padding: 2rem;
@@ -1103,9 +1005,7 @@ button {
   cursor: pointer;
 }
 
-/* ------------------------------
-   Media queries (responsive)
------------------------------- */
+/*    Media queries */
 @media (min-width: 992px) {
   .main-content {
     max-width: 1200px;
@@ -1164,7 +1064,7 @@ button {
     transform: none;
   }
   
-  /* Tabla comparativo responsive */
+  /* Tabla comparativo */
   .comparativo-tabla,
   .comparativo-tabla thead,
   .comparativo-tabla tbody,
@@ -1216,24 +1116,5 @@ button {
   .footer .btn {
     font-size: 0.85rem;
     padding: 6px 12px;
-  }
-    .panel-dinamico {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: white;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
-    padding: 1rem;
-    z-index: 9999;
-    max-height: 50vh;
-    overflow-y: auto;
-  }
-
-  #pantalla-juego {
-    flex-direction: column;
-    align-items: center;
   }
 }
