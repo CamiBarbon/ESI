@@ -907,7 +907,7 @@ button {
 #pregunta {
   margin-top: 1rem;
   padding: 1rem;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(53, 53, 53, 0.336);
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
@@ -916,10 +916,6 @@ button {
   display: none;
 }
 
-button {
-  font-weight: bold;
-  margin-top: 1rem;
-}
 
 /* Estilo de pregunta con opciones */
 #opciones {
@@ -1070,16 +1066,18 @@ button {
 }
 
 #tablero {
+  width: 533px;  /* Tamaño fijo del PNG */
+  height: 533px;
   display: block;
-  width: auto;
-  height: auto;
-  max-width: none;
+  border-radius: 10px;
 }
 
 #fichas {
   position: absolute;
   top: 0;
   left: 0;
+  width: 533px;
+  height: 533px;
 }
 
 .ficha {
