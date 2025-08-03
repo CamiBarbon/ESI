@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('contact-form');
-  const pristine = new Pristine(form);
+  let form = document.getElementById('contact-form');
+  let pristine = new Pristine(form);
 
   form.addEventListener('submit', (e) => {
     if (!pristine.validate()) {

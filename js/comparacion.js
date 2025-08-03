@@ -1,6 +1,6 @@
   window.addEventListener('DOMContentLoaded', () => {
-    const burbuja = document.getElementById('burbuja-regional');
-    const botonCerrar = document.querySelector('.cerrar-burbuja');
+    let burbuja = document.getElementById('burbuja-regional');
+    let botonCerrar = document.querySelector('.cerrar-burbuja');
 
     if (!burbuja) return;
 

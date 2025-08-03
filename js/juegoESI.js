@@ -1,18 +1,3 @@
-let tablero = document.getElementById("tablero");
-let fichasContainer = document.getElementById("fichas");
-let dadoBtn = document.getElementById("tirar-dado");
-let resultadoDado = document.getElementById("resultado-dado");
-let preguntaCont = document.getElementById("pregunta");
-let textoPregunta = document.getElementById("texto-pregunta");
-let opcionesCont = document.getElementById("opciones");
-let turnoSpan = document.getElementById("turno-actual");
-let pantallaInicio = document.getElementById("pantalla-inicio");
-let pantallaJugadores = document.getElementById("pantalla-jugadores");
-let pantallaJuego = document.getElementById("pantalla-juego");
-let pantallaGanador = document.getElementById("pantalla-ganador");
-let nombreGanador = document.getElementById("nombre-ganador");
-let formJugadores = document.getElementById("form-jugadores");
-
 let tableroPos = [
   { x: 27, y: 493 }, { x: 52, y: 426 }, { x: 52, y: 364 },
   { x: 52, y: 289 }, { x: 52, y: 222 }, { x: 51, y: 143 },
@@ -49,6 +34,21 @@ let turno = 0;
 let preguntas = [];
 let esperando = false;
 
+let preguntaCont = document.getElementById("pregunta");
+let textoPregunta = document.getElementById("texto-pregunta");
+let opcionesCont = document.getElementById("opciones");
+let turnoSpan = document.getElementById("turno-actual");
+let resultadoDado = document.getElementById("resultado-dado");
+let dadoBtn = document.getElementById("tirar-dado");
+let pantallaInicio = document.getElementById("pantalla-inicio");
+let pantallaJugadores = document.getElementById("pantalla-jugadores");
+let pantallaJuego = document.getElementById("pantalla-juego");
+let pantallaGanador = document.getElementById("pantalla-ganador");
+let nombreGanador = document.getElementById("nombre-ganador");
+let formJugadores = document.getElementById("form-jugadores");
+let fichasContainer = document.getElementById("fichas");
+
+// 50 preguntas desde contenidos de ESI
 let basePreg = [
 { pregunta: "¿Qué ley establece la ESI en Argentina?", opciones: ["Ley 26.150", "Ley 24.193", "Ley 25.250"], correcta: "Ley 26.150" },
   { pregunta: "¿Qué eje promueve la valoración de la afectividad?", opciones: ["Ejercer derechos", "Cuidar el cuerpo", "Respetar la diversidad"], correcta: "Valorar la afectividad" },
@@ -100,11 +100,9 @@ let basePreg = [
   { pregunta: "¿Qué eje incluye diversidad corporal?", opciones: ["Respetar la diversidad", "Ejercer derechos", "Valorar la afectividad"], correcta: "Respetar la diversidad" },
   { pregunta: "¿Qué eje trabaja los vínculos sanos?", opciones: ["Valorar la afectividad", "Cuidar el cuerpo", "Respetar la diversidad"], correcta: "Valorar la afectividad" }
 ];
-
 while (preguntas.length < 50) {
   preguntas.push(basePreg[Math.floor(Math.random() * basePreg.length)]);
 }
-
 
 function iniciarJuego() {
   jugadores.forEach((j, i) => {
@@ -114,53 +112,84 @@ function iniciarJuego() {
     div.id = `ficha${i}`;
     fichasContainer.appendChild(div);
     posJugador[i] = 0;
-    let [x,y] = escalar(0);
+    let { x, y } = tableroPos[0];
     div.style.left = `${x}px`;
     div.style.top = `${y}px`;
   });
   turno = 0;
-  turnoSpan.textContent = jugadores[0].nombre;
+  turnoSpan.textContent = jugadores[turno].nombre;
+  resultadoDado.textContent = "";
   dadoBtn.disabled = false;
 }
 
 dadoBtn.onclick = () => {
   if (esperando) return;
   dadoBtn.disabled = true;
-  let dado = Math.floor(Math.random()*6)+1;
-  resultadoDado.textContent = `Sacaste un ${dado}`;
-  let nueva = posJugador[turno]+dado;
-  if (nueva >= tableroPos.length) {
-    nombreGanador.textContent = jugadores[turno].nombre;
-    pantallaJuego.classList.add("oculto");
-    pantallaGanador.classList.remove("oculto");
-    localStorage.setItem("ranking", JSON.stringify([jugadores[turno].nombre]));
-    return;
-  }
-  gestionarCasilla(nueva);
+
+  let dado = Math.floor(Math.random() * 6) + 1;
+  resultadoDado.textContent = `🎲 Sacaste un ${dado}`;
+  let nueva = posJugador[turno] + dado;
+
+  // Mostrar número del dado primero
+  setTimeout(() => {
+    if (nueva >= tableroPos.length) {
+      nombreGanador.textContent = jugadores[turno].nombre;
+      pantallaJuego.classList.add("oculto");
+      pantallaGanador.classList.remove("oculto");
+
+      // Guardar último ganador al ranking (últimos 5)
+      let ranking = JSON.parse(localStorage.getItem("ranking")) || [];
+      ranking.unshift(jugadores[turno].nombre);
+      localStorage.setItem("ranking", JSON.stringify(ranking.slice(0, 5)));
+
+      setTimeout(() => {
+        window.location.href = "ranking.html";
+      }, 2000);
+      return;
+    }
+
+    gestionarCasilla(nueva);
+  }, 500); 
 };
 
 function gestionarCasilla(nueva) {
   let acc = acciones[nueva];
   if (acc) {
-    if (acc.tipo === "pierde") {
-      alert("Perdés el próximo turno");
-      nextTurn();
-    } else if (acc.tipo === "reinicia") {
-      posJugador[turno] = 0;
-      moverFicha(0);
-      nextTurn();
-    } else if (acc.tipo === "suerte" || acc.tipo === "retrocede") {
-      posJugador[turno] = acc.destino;
-      moverFicha(acc.destino);
-      nextTurn();
-    } else if (acc.tipo === "avanza") {
-      posJugador[turno] += acc.cantidad;
-      moverFicha(posJugador[turno]);
-      nextTurn();
-    } else if (acc.tipo === "tira") {
-      moverFicha(nueva);
-      posJugador[turno] = nueva;
-      dadoBtn.disabled = false;
+    switch (acc.tipo) {
+      case "pierde":
+        alert("😢 Casillero especial: perdés el próximo turno.");
+        nextTurn();
+        break;
+      case "reinicia":
+        alert("🔄 Casillero especial: volvés al inicio.");
+        posJugador[turno] = 0;
+        moverFicha(0);
+        nextTurn();
+        break;
+      case "suerte":
+        alert(`🍀 Casillero especial: saltás al ${acc.destino}.`);
+        posJugador[turno] = acc.destino;
+        moverFicha(acc.destino);
+        nextTurn();
+        break;
+      case "retrocede":
+        alert(`⬅️ Casillero especial: retrocedés al ${acc.destino}.`);
+        posJugador[turno] = acc.destino;
+        moverFicha(acc.destino);
+        nextTurn();
+        break;
+      case "avanza":
+        alert(`➡️ Casillero especial: avanzás ${acc.cantidad} casilleros.`);
+        posJugador[turno] += acc.cantidad;
+        moverFicha(posJugador[turno]);
+        nextTurn();
+        break;
+      case "tira":
+        alert("🎲 Casillero especial: volvés a tirar.");
+        posJugador[turno] = nueva;
+        moverFicha(nueva);
+        dadoBtn.disabled = false;
+        break;
     }
   } else {
     pedirPregunta(nueva);
@@ -170,27 +199,28 @@ function gestionarCasilla(nueva) {
 function moverFicha(casilla) {
   posJugador[turno] = casilla;
   let ficha = document.getElementById(`ficha${turno}`);
-  let [x,y] = escalar(casilla);
+  let { x, y } = tableroPos[casilla];
   ficha.style.left = `${x}px`;
   ficha.style.top = `${y}px`;
 }
 
 function pedirPregunta(casilla) {
   esperando = true;
-  let p = preguntas[Math.floor(Math.random()*preguntas.length)];
+  let p = preguntas[Math.floor(Math.random() * preguntas.length)];
   preguntaCont.classList.remove("oculto");
   textoPregunta.textContent = p.pregunta;
   opcionesCont.innerHTML = "";
-  p.opciones.forEach((opt,i) => {
+
+  p.opciones.forEach(op => {
     let btn = document.createElement("button");
     btn.className = "btn btn-outline-dark m-2";
-    btn.textContent = opt;
+    btn.textContent = op;
     btn.onclick = () => {
-      if (i === p.correcta) {
-        alert("✅ Correcto, avanzás");
+      if (op === p.correcta) {
+        alert("✅ ¡Correcto! Avanzás.");
         moverFicha(casilla);
       } else {
-        alert("❌ Incorrecto, no avanzás");
+        alert("❌ Incorrecto. No avanzás.");
       }
       preguntaCont.classList.add("oculto");
       esperando = false;
@@ -201,18 +231,20 @@ function pedirPregunta(casilla) {
 }
 
 function nextTurn() {
-  turno = (turno+1)%jugadores.length;
+  turno = (turno + 1) % jugadores.length;
   turnoSpan.textContent = jugadores[turno].nombre;
+  resultadoDado.textContent = "";
   dadoBtn.disabled = false;
 }
+
 
 document.getElementById("confirmar-cantidad").onclick = () => {
   let qty = parseInt(document.getElementById("cantidad").value);
   formJugadores.innerHTML = "";
-  for (let i=0;i<qty;i++){
+  for (let i = 0; i < qty; i++) {
     formJugadores.innerHTML += `
       <div class="mb-2">
-        <input type="text" placeholder="Nombre jugador ${i+1}" required id="n${i}" class="form-control" />
+        <input type="text" id="n${i}" class="form-control" placeholder="Nombre jugador ${i + 1}" required>
         <select id="a${i}" class="form-select">
           <option>🐸</option><option>🐱</option><option>🦊</option><option>🐻</option>
         </select>
@@ -224,17 +256,18 @@ document.getElementById("confirmar-cantidad").onclick = () => {
 
 document.getElementById("comenzar-juego").onclick = () => {
   jugadores = [];
-  let qty = formJugadores.children.length;
-  for (let i=0;i<qty;i++){
-    const nombre = document.getElementById(`n${i}`).value;
-    const avatar = document.getElementById(`a${i}`).value;
-    if (!nombre) { alert("Nombre requerido"); return; }
+  for (let i = 0; i < formJugadores.children.length; i++) {
+    let nombre = document.getElementById(`n${i}`).value.trim();
+    let avatar = document.getElementById(`a${i}`).value;
+    if (!nombre) return alert("Todos los jugadores deben tener nombre");
     jugadores.push({ nombre, avatar });
   }
+
   pantallaJugadores.classList.add("oculto");
   pantallaJuego.classList.remove("oculto");
+
   if (/Mobi|Android/i.test(navigator.userAgent)) {
-    pantallaJuego.innerHTML = "<p>📱 Este juego es para escritorio (PC).</p>";
+    pantallaJuego.innerHTML = "<p class='text-center'>📱 Este juego está disponible solo para escritorio.</p>";
   } else {
     iniciarJuego();
   }
