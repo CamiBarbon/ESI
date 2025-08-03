@@ -12,21 +12,20 @@ body {
 }
 
 .rubik {
-  font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 800;
   font-style: normal;
 }
 
 .barriecito-regular {
   font-family: "Barriecito", system-ui;
   font-weight: 600;
-  font-style: larger;
+  font-size: large;
 }
 
 h1 {
   font-family: "Barriecito";
   margin-bottom: 3rem;
-  font-weight: 1200;
+  font-weight: 1000;
   text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.7);
 }
 h2 {
@@ -34,6 +33,7 @@ h2 {
   font-size: x-large;
   text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.7);
 }
+
 
 /* Sidebar Desktop */
 .sidebar {
@@ -146,7 +146,6 @@ h2 {
   gap: 1.5rem;
   padding: 2rem;
   overflow-x: auto; /* para scroll horizontal si no entran */
-  -webkit-overflow-scrolling: touch; /* suaviza scroll en móvil */
 }
 
 .eje {
@@ -336,9 +335,7 @@ a:active {
 
 /* Hover efecto */
 .event:hover {
-  transform: scale(1.05);
-  box-shadow: 0;
-}
+  transform: scale(1.05);}
 
 /* Eventos a la izquierda */
 .event-top {
@@ -415,11 +412,6 @@ a:active {
   transition: all 0.6s ease;
 }
 
-.conclusion-burbuja.visible {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
 
 .conclusion-burbuja h3 {
   font-size: 1.1rem;
@@ -882,152 +874,106 @@ button {
   font-size: 1rem;
   line-height: 1.5;
 }
-
-.grid-noticias {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1em;
-  padding: 2em;
-}
-
-.noticia {
-  background-color: white;
-  border: 1px solid #ccc;
-  padding: 1em;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.noticia:hover {
-  transform: scale(1.02);
-}
-.noticia-preview {
-  background-color: #fff; /* fondo blanco */
-  color: #000; /* texto negro */
-  padding: 1rem;
-  border-radius: 8px;
-  transition: transform 0.2s ease;
-}
-
-.noticia-preview:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-.editor input, .editor textarea, .editor select {
-  width: 100%;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-  font-size: 1rem;
-}
-
-.imagen-preview {
-  width: 100%;
-  max-height: 300px;
-  object-fit: cover;
-  margin-bottom: 1rem;
-}
-
-/* ==== Estilo general para noticias tipo diario ==== */
-.noticia-portada {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.08);
-  font-family: 'Georgia', serif;
-  padding: 1rem;
-  transition: transform 0.2s ease;
+/* juego oca */
+.tablero-container {
   position: relative;
+  max-width: 900px;
+  width: 100%;
+}
+
+#tablero {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+#fichas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
 }
 
-.noticia-portada:hover {
-  transform: scale(1.01);
+.ficha {
+  position: absolute;
+  font-size: 24px;
+  transition: top 0.5s, left 0.5s;
+  transform: translate(-50%, -50%);
 }
 
-.noticia-portada h5, #tituloDiario {
-  color: #111;
-  word-wrap: break-word;
-  font-size: 1.4rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  border-bottom: 1px solid #333;
-  padding-bottom: 0.5rem;
-  margin-bottom: 0.75rem;
-}
-
-.noticia-portada img, #imagenDiario {
-  width: 100%;
-  height: auto;
-  border: 1px solid #999;
-  margin-bottom: 1rem;
-}
-
-.noticia-portada .copete, #copeteDiario {
-  font-style: italic;
-  font-size: 1rem;
-  color: #555;
-}
-
-#desarrolloDiario {
-  text-align: justify;
-  color: #222;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-#contenedorDiario .diario {
-  font-family: 'Georgia', serif;
-  background: #fff;
-  border: 2px solid #444;
-  padding: 2rem;
-  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
-}
-.carousel-item .portada-carrusel {
-  background: white;
-  border: 1px solid #ccc;
+#pregunta {
+  margin-top: 1rem;
   padding: 1rem;
-  border-radius: 6px;
-  max-height: 400px;
-  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
-    .noticia-portada {
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      padding: 1rem;
-      background: #fff;
-      box-shadow: 0 1px 4px rgb(0 0 0 / 0.1);
-      max-width: 400px;
-      margin: auto;
-      cursor: default;
-    }
-    .noticia-portada img {
-      width: 100%;
-      border-radius: 4px;
-      margin-bottom: 0.5rem;
-      object-fit: cover;
-      height: 200px;
-    }
-    .noticia-portada h5 {
-      font-weight: 700;
-      font-size: 1.25rem;
-      margin-bottom: 0.3rem;
-      color: #222;
-    }
-    .noticia-portada p.copete {
-      font-weight: 600;
-      color: #555;
-      margin-bottom: 0.8rem;
-    }
-    .noticia-portada p.desarrollo {
-      font-weight: 400;
-      color: #444;
-    }
-    /* Contenedor info usuario debajo */
-    .info-usuario {
-      font-size: 0.8rem;
-      color: #666;
-      margin-top: 0.8rem;
+
+.oculto {
+  display: none;
+}
+
+button {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+/* Estilo de pregunta con opciones */
+#opciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ranking-container {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       text-align: center;
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .ranking-container h1 {
+      font-weight: 700;
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
+
+    .ranking-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .ranking-list li {
+      background-color: #fff;
+      border-radius: 100px;
+      padding: 1rem 1.5rem;
+      margin: 0.5rem 0;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #444;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .btn-volver {
+      margin-top: 2rem;
+      background-color: #ffd27f;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      font-weight: 600;
+      border-radius: 50px;
+      color: #2a2a4e;
+    }
+
+    .btn-volver:hover {
+      background-color: #fbc452;
     }
 
 .footer {
@@ -1113,6 +1059,52 @@ button {
     }
 
 
+.pantalla {
+  padding: 2rem;
+}
+
+.tablero-container {
+  position: relative;
+  width: fit-content;
+  margin: auto;
+}
+
+#tablero {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: none;
+}
+
+#fichas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.ficha {
+  position: absolute;
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+
+.oculto {
+  display: none;
+}
+
+input[type="text"], select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin: 0.5rem;
+}
+
+button {
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
 /* ------------------------------
    Media queries (responsive)
 ------------------------------ */
@@ -1124,6 +1116,25 @@ button {
   }
   .card-grid {
     grid-template-columns: repeat(3, 1fr); 
+  }
+    #pantalla-juego {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .tablero-container {
+    flex: 2;
+  }
+
+  .panel-dinamico {
+    flex: 1;
+    position: sticky;
+    top: 2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
   }
 }
 
@@ -1207,5 +1218,24 @@ button {
   .footer .btn {
     font-size: 0.85rem;
     padding: 6px 12px;
+  }
+    .panel-dinamico {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    z-index: 9999;
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+
+  #pantalla-juego {
+    flex-direction: column;
+    align-items: center;
   }
 }
