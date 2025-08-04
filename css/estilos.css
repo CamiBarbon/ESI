@@ -397,7 +397,11 @@ a:active {
 .cerrar-burbuja:hover {
   color: #444;
 }
-
+.conclusion-burbuja.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
 /*  Cuadro comparativo */
 .comparativo-container {
   max-width: 900px;
